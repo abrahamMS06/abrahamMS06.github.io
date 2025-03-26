@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 1</title>
+    <style>
+        /* Estilos generales */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .form-container {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 500px;
+                margin: auto;
+            }
+
+            .form-container h1 {
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: #333;
+            }
+
+            .form-container label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+                color: #555;
+            }
+
+            .form-container input[type="text"],
+            .form-container select {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+
+            .form-container input[type="submit"] {
+                width: 100%;
+                padding: 12px;
+                background-color:rgb(202, 24, 0);
+                border: none;
+                border-radius: 5px;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .form-container input[type="submit"]:hover {
+                background-color:rgb(255, 0, 0);
+            }
+
+            /* Estilos para el modal de carga */
+            .loading-modal {
+                display: none; /* Oculto por defecto */
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0);
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+
+            .loading-content {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 10px;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .loading-spinner {
+                border: 4px solid rgba(0, 129, 168, 0.74); /* Azul oscuro */
+                border-top: 4px solid rgb(255, 255, 255); /* Azul oscuro */
+                border-radius: 70%;
+                width: 40px;
+                height: 40px;
+                animation: spin 1s linear infinite;
+                margin: 0 auto 20px;
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+
+            .loading-content p {
+                margin: 0;
+                font-size: 18px;
+                color: #333;
+            }
+
+            /* Media Queries para responsividad */
+            @media (max-width: 600px) {
+                .form-container {
+                    padding: 20px;
+                }
+
+                .form-container h1 {
+                    font-size: 20px;
+                }
+
+                .form-container input[type="text"],
+                .form-container select {
+                    font-size: 14px;
+                }
+
+                .form-container input[type="submit"] {
+                    font-size: 14px;
+                }
+
+                .loading-content {
+                    padding: 20px;
+                }
+
+                .loading-content p {
+                    font-size: 16px;
+                }
+            }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Datos generales</h1>
+        <form id="fase1Form" method="post" action="">
+    <!-- Datos personales -->
+    <label for="nombre">Nombre_S:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <br><br>
+
+    <label for="apellido_P">Apellido Paterno:</label>
+    <input type="text" id="apellido_P" name="apellido_P" required>
+    <br><br>
+
+    <label for="apellido_M">Apellido Materno:</label>
+    <input type="text" id="apellido_M" name="apellido_M" required>
+    <br><br>
+    
+    <!-- Datos académicos -->
+    <label for="Numero_boleta">Número de Boleta:</label>
+    <input type="text" id="Numero_boleta" name="Numero_boleta" required>
+    <br><br>
+
+    <label for="semestre">Semestre:</label>
+    <select id="semestre" name="semestre" required>
+        <option value="">-- Selecciona tu semestre --</option>
+        <option value="1">Semestre 1</option>
+        <option value="2">Semestre 2</option>
+        <option value="3">Semestre 3</option>
+        <option value="4">Semestre 4</option>
+        <option value="5">Semestre 5</option>
+        <option value="6">Semestre 6</option>
+        <option value="7">Semestre 7</option>
+        <option value="8">Semestre 8</option>
+        <option value="9">SUPERIOR</option>
+    </select>
+    <br><br>
+
+    <!-- Selección de servicio -->
+    <label for="opcion">Selecciona una opción:</label>
+    <select id="opcion" name="opcion" required>
+        <option value="">-- Selecciona una opción --</option>
+        <option value="recuperar_correo_baja">1- Recuperar correo por baja de cuenta institucional</option>
+        <option value="actualizar_telefono">2- Actualizar número telefónico asociado a mi correo institucional</option>
+        <option value="recuperar_contrasena">3- Recuperar contraseña de mi correo institucional</option>
+        <option value="consultar_correo">4- Consultar correo institucional</option>
+        <option value="solicitar_correo">5- Solicitar mi correo institucional</option>
+        <option value="cambiar_correo">6- Cambio de dominio del Correo institucional</option>
+    </select>
+    <br><br>
+
+    <!-- Botón de envío -->
+            <input type="submit" value="Enviar">
+        </form>
+
+        <!-- Modal de carga -->
+        <div class="loading-modal" id="loadingModal">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p>Procesando tu solicitud...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar el modal de carga y simular un retraso antes de enviar el formulario
+        document.getElementById('fase1Form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitar el envío inmediato del formulario
+
+            // Mostrar el modal de carga
+            document.getElementById('loadingModal').style.display = 'flex';
+
+            // Simular un retraso de 9 segundos antes de enviar el formulario
+            setTimeout(function () {
+                document.getElementById('fase1Form').submit(); // Enviar el formulario después del retraso
+            }, 5000); // 9000 milisegundos = 9 segundos
+        });
+     </script>
+</body>
+</html>
+        
