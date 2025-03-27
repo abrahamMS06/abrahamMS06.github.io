@@ -146,54 +146,55 @@
 <body>
     <div class="form-container">
         <h1>Datos generales</h1>
+                <!-- FORMULARIO  -->
         <form id="fase1Form" method="post" action="FASE2.php">
-    <!-- Datos personales -->
-    <label for="nombre">Nombre_S:</label>
-    <input type="text" id="nombre" name="nombre" required>
-    <br><br>
-
-    <label for="apellido_P">Apellido Paterno:</label>
-    <input type="text" id="apellido_P" name="apellido_P" required>
-    <br><br>
-
-    <label for="apellido_M">Apellido Materno:</label>
-    <input type="text" id="apellido_M" name="apellido_M" required>
-    <br><br>
-    
-    <!-- Datos académicos -->
-    <label for="Numero_boleta">Número de Boleta:</label>
-    <input type="text" id="Numero_boleta" name="Numero_boleta" required>
-    <br><br>
-
-    <label for="semestre">Semestre:</label>
-    <select id="semestre" name="semestre" required>
-        <option value="">-- Selecciona tu semestre --</option>
-        <option value="1">Semestre 1</option>
-        <option value="2">Semestre 2</option>
-        <option value="3">Semestre 3</option>
-        <option value="4">Semestre 4</option>
-        <option value="5">Semestre 5</option>
-        <option value="6">Semestre 6</option>
-        <option value="7">Semestre 7</option>
-        <option value="8">Semestre 8</option>
-        <option value="9">SUPERIOR</option>
-    </select>
-    <br><br>
-
-    <!-- Selección de servicio -->
-    <label for="opcion">Selecciona una opción:</label>
-    <select id="opcion" name="opcion" required>
-        <option value="">-- Selecciona una opción --</option>
-        <option value="recuperar_correo_baja">1- Recuperar correo por baja de cuenta institucional</option>
-        <option value="actualizar_telefono">2- Actualizar número telefónico asociado a mi correo institucional</option>
-        <option value="recuperar_contrasena">3- Recuperar contraseña de mi correo institucional</option>
-        <option value="consultar_correo">4- Consultar correo institucional</option>
-        <option value="solicitar_correo">5- Solicitar mi correo institucional</option>
-        <option value="cambiar_correo">6- Cambio de dominio del Correo institucional</option>
-    </select>
-    <br><br>
-
-    <!-- Botón de envío -->
+                <!-- Datos personales -->
+                <label for="nombre">Nombre_S:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <br><br>
+            
+                <label for="apellido_P">Apellido Paterno:</label>
+                <input type="text" id="apellido_P" name="apellido_P" required>
+                <br><br>
+            
+                <label for="apellido_M">Apellido Materno:</label>
+                <input type="text" id="apellido_M" name="apellido_M" required>
+                <br><br>
+                
+                <!-- Datos académicos -->
+                <label for="Numero_boleta">Número de Boleta:</label>
+                <input type="text" id="Numero_boleta" name="Numero_boleta" required>
+                <br><br>
+            
+                <label for="semestre">Semestre:</label>
+                <select id="semestre" name="semestre" required>
+                    <option value="">-- Selecciona tu semestre --</option>
+                    <option value="1">Semestre 1</option>
+                    <option value="2">Semestre 2</option>
+                    <option value="3">Semestre 3</option>
+                    <option value="4">Semestre 4</option>
+                    <option value="5">Semestre 5</option>
+                    <option value="6">Semestre 6</option>
+                    <option value="7">Semestre 7</option>
+                    <option value="8">Semestre 8</option>
+                    <option value="9">SUPERIOR</option>
+                </select>
+                <br><br>
+            
+                <!-- Selección de servicio -->
+                <label for="opcion">Selecciona una opción:</label>
+                <select id="opcion" name="opcion" required>
+                    <option value="">-- Selecciona una opción --</option>
+                    <option value="recuperar_correo_baja">1- Recuperar correo por baja de cuenta institucional</option>
+                    <option value="actualizar_telefono">2- Actualizar número telefónico asociado a mi correo institucional</option>
+                    <option value="recuperar_contrasena">3- Recuperar contraseña de mi correo institucional</option>
+                    <option value="consultar_correo">4- Consultar correo institucional</option>
+                    <option value="solicitar_correo">5- Solicitar mi correo institucional</option>
+                    <option value="cambiar_correo">6- Cambio de dominio del Correo institucional</option>
+                </select>
+                <br><br>
+            
+                <!-- Botón de envío -->
             <input type="submit" value="Enviar">
         </form>
 
